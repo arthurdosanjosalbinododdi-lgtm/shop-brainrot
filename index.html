@@ -1,56 +1,78 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop Brainrot</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <h1>Shop Brainrot</h1>
-        <nav>
-            <a href="#">Início</a>
-            <a href="#">Produtos</a>
-            <a href="#">Contato</a>
-        </nav>
-    </header>
+/* style.css
+   Estilos para grade de produtos fornecidos pelo usuário.
+   - Salve como style.css e adicione ao seu HTML com: <link rel="stylesheet" href="style.css">
+   - Estrutura HTML esperada (exemplo):
+     <div class="product-grid">
+       <article class="product-card">
+         <h3 class="product-name">Los Nooo My</h3>
+         <div class="product-meta">
+           <span class="product-speed">Hotspotsitos <strong>96,2M/s</strong></span>
+           <span class="product-price">R$35,00</span>
+         </div>
+       </article>
+       <!-- repetir product-card para cada produto -->
+     </div>
+*/
 
-    <section class="hero">
-        <h2>O estilo que você ama.</h2>
-        <p>Roupas minimalistas inspiradas na cultura brainrot.</p>
-        <button>Ver produtos</button>
-    </section>
+:root{
+  --bg:#0f1724; /* deep slate */
+  --card:#0b1220;
+  --muted:#9aa6b2;
+  --accent:#16a34a; /* green for price */
+  --accent-2:#06b6d4; /* cyan for speed */
+  --glass: rgba(255,255,255,0.03);
+  --radius:12px;
+  --gap:1rem;
+  --max-width:1200px;
+  --text:#e6eef6;
+}
 
-    <section class="produtos">
-        <h2>Produtos em Destaque</h2>
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;color:var(--text);background:linear-gradient(180deg,#071028 0%, var(--bg) 100%);}
 
-        <div class="grid">
-            <div class="card">
-                <img src="assets/img/produto1.jpg" alt="Produto 1">
-                <h3>Camiseta Brainrot</h3>
-                <p>R$ 79,90</p>
-                <button>Comprar</button>
-            </div>
+.container{max-width:var(--max-width);margin:2rem auto;padding:0 1rem}
 
-            <div class="card">
-                <img src="assets/img/produto2.jpg" alt="Produto 2">
-                <h3>Moletom Minimal</h3>
-                <p>R$ 159,90</p>
-                <button>Comprar</button>
-            </div>
+/* Grid */
+.product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:var(--gap);align-items:start}
 
-            <div class="card">
-                <img src="assets/img/produto3.jpg" alt="Produto 3">
-                <h3>Boné Clean</h3>
-                <p>R$ 59,90</p>
-                <button>Comprar</button>
-            </div>
-        </div>
-    </section>
+/* Card */
+.product-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), var(--glass));border:1px solid rgba(255,255,255,0.04);padding:1rem;border-radius:var(--radius);box-shadow:0 6px 18px rgba(2,6,23,0.6);transition:transform .18s ease,box-shadow .18s ease;display:flex;flex-direction:column;gap:.6rem}
+.product-card:hover{transform:translateY(-6px);box-shadow:0 14px 30px rgba(2,6,23,0.75)}
 
-    <footer>
-        <p>&copy; 2025 Shop Brainrot — Todos os direitos reservados.</p>
-    </footer>
-</body>
-</html>
+.product-name{font-size:1.05rem;margin:0 0 .2rem 0;font-weight:600;letter-spacing:0.2px}
+.product-meta{display:flex;justify-content:space-between;align-items:center;gap:.6rem}
+
+.product-speed{font-size:.9rem;color:var(--muted);display:inline-flex;align-items:center;gap:.5rem}
+.product-speed strong{color:var(--accent-2);font-weight:700}
+
+.product-price{font-weight:700;background:linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));padding:.35rem .6rem;border-radius:10px;border:1px solid rgba(255,255,255,0.03);color:var(--accent);white-space:nowrap}
+
+/* Badge to show numeric speed visually */
+.speed-badge{min-width:56px;text-align:center;padding:.25rem .45rem;border-radius:999px;font-weight:700;font-size:.85rem;background:linear-gradient(90deg, rgba(6,182,212,0.08), rgba(22,163,74,0.04));border:1px solid rgba(255,255,255,0.03)}
+
+/* small description area (optional) */
+.product-desc{font-size:.85rem;color:var(--muted);margin-top:.25rem}
+
+/* Buttons / actions */
+.product-actions{margin-top:auto;display:flex;gap:.5rem}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem .7rem;border-radius:10px;border:none;cursor:pointer;font-weight:600}
+.btn-add{background:linear-gradient(90deg,var(--accent),#10b981);color:white}
+.btn-wish{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted)}
+
+/* Responsive tweaks */
+@media (max-width:420px){
+  .product-grid{grid-template-columns:repeat(1,1fr)}
+  .product-price{font-size:.95rem}
+}
+
+/* Utility */
+.kicker{font-size:.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:1.2px}
+.section-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem}
+
+/* Print friendly */
+@media print{
+  :root{background:white;color:black}
+  body{background:white}
+  .product-card{box-shadow:none;border:1px solid #ddd}
+  .product-price{color:black;background:transparent}
+}
