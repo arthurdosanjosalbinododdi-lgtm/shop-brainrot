@@ -1,78 +1,227 @@
-/* style.css
-   Estilos para grade de produtos fornecidos pelo usuário.
-   - Salve como style.css e adicione ao seu HTML com: <link rel="stylesheet" href="style.css">
-   - Estrutura HTML esperada (exemplo):
-     <div class="product-grid">
-       <article class="product-card">
-         <h3 class="product-name">Los Nooo My</h3>
-         <div class="product-meta">
-           <span class="product-speed">Hotspotsitos <strong>96,2M/s</strong></span>
-           <span class="product-price">R$35,00</span>
-         </div>
-       </article>
-       <!-- repetir product-card para cada produto -->
-     </div>
-*/
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop Brainrot</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="section-title">
+      <h2>Produtos</h2>
+    </div>
 
-:root{
-  --bg:#0f1724; /* deep slate */
-  --card:#0b1220;
-  --muted:#9aa6b2;
-  --accent:#16a34a; /* green for price */
-  --accent-2:#06b6d4; /* cyan for speed */
-  --glass: rgba(255,255,255,0.03);
-  --radius:12px;
-  --gap:1rem;
-  --max-width:1200px;
-  --text:#e6eef6;
-}
+    <div class="product-grid">
 
-*{box-sizing:border-box}
-html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;color:var(--text);background:linear-gradient(180deg,#071028 0%, var(--bg) 100%);}
+      <!-- Produto 1 -->
+      <article class="product-card">
+        <h3 class="product-name">Los Nooo My</h3>
+        <div class="product-meta">
+          <span class="product-speed">Hotspotsitos <strong>96,2M/s</strong></span>
+          <span class="product-price">R$35,00</span>
+        </div>
+      </article>
 
-.container{max-width:var(--max-width);margin:2rem auto;padding:0 1rem}
+      <!-- Produto 2 -->
+      <article class="product-card">
+        <h3 class="product-name">Los Mobilis</h3>
+        <div class="product-meta">
+          <span class="product-speed">264M/s</span>
+          <span class="product-price">R$100,00</span>
+        </div>
+      </article>
 
-/* Grid */
-.product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:var(--gap);align-items:start}
+      <!-- Produto 3 -->
+      <article class="product-card">
+        <h3 class="product-name">67</h3>
+        <div class="product-meta">
+          <span class="product-speed">52,5M/s</span>
+          <span class="product-price">R$25,00</span>
+        </div>
+      </article>
 
-/* Card */
-.product-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), var(--glass));border:1px solid rgba(255,255,255,0.04);padding:1rem;border-radius:var(--radius);box-shadow:0 6px 18px rgba(2,6,23,0.6);transition:transform .18s ease,box-shadow .18s ease;display:flex;flex-direction:column;gap:.6rem}
-.product-card:hover{transform:translateY(-6px);box-shadow:0 14px 30px rgba(2,6,23,0.75)}
+      <!-- Produto 4 -->
+      <article class="product-card">
+        <h3 class="product-name">Quesadilla Crocodilla</h3>
+        <div class="product-meta">
+          <span class="product-speed">33M/s</span>
+          <span class="product-price">R$15,00</span>
+        </div>
+      </article>
 
-.product-name{font-size:1.05rem;margin:0 0 .2rem 0;font-weight:600;letter-spacing:0.2px}
-.product-meta{display:flex;justify-content:space-between;align-items:center;gap:.6rem}
+      <!-- Produto 5 -->
+      <article class="product-card">
+        <h3 class="product-name">Mieteteira Bicicleteira</h3>
+        <div class="product-meta">
+          <span class="product-speed">26M/s</span>
+          <span class="product-price">R$20,00</span>
+        </div>
+      </article>
 
-.product-speed{font-size:.9rem;color:var(--muted);display:inline-flex;align-items:center;gap:.5rem}
-.product-speed strong{color:var(--accent-2);font-weight:700}
+      <!-- Produto 6 (repetido) -->
+      <article class="product-card">
+        <h3 class="product-name">Mieteteira Bicicleteira</h3>
+        <div class="product-meta">
+          <span class="product-speed">26M/s</span>
+          <span class="product-price">R$20,00</span>
+        </div>
+      </article>
 
-.product-price{font-weight:700;background:linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));padding:.35rem .6rem;border-radius:10px;border:1px solid rgba(255,255,255,0.03);color:var(--accent);white-space:nowrap}
+      <!-- Produto 7 -->
+      <article class="product-card">
+        <h3 class="product-name">Los Mobilis</h3>
+        <div class="product-meta">
+          <span class="product-speed">22M/s</span>
+          <span class="product-price">R$20,00</span>
+        </div>
+      </article>
 
-/* Badge to show numeric speed visually */
-.speed-badge{min-width:56px;text-align:center;padding:.25rem .45rem;border-radius:999px;font-weight:700;font-size:.85rem;background:linear-gradient(90deg, rgba(6,182,212,0.08), rgba(22,163,74,0.04));border:1px solid rgba(255,255,255,0.03)}
+      <!-- Produto 8 -->
+      <article class="product-card">
+        <h3 class="product-name">Los Nooo My Hotspotsitos</h3>
+        <div class="product-meta">
+          <span class="product-speed">41,2M/s</span>
+          <span class="product-price">R$25,00</span>
+        </div>
+      </article>
 
-/* small description area (optional) */
-.product-desc{font-size:.85rem;color:var(--muted);margin-top:.25rem}
+      <!-- Produto 9 -->
+      <article class="product-card">
+        <h3 class="product-name">Mieteteira Bicicleteira</h3>
+        <div class="product-meta">
+          <span class="product-speed">156M/s</span>
+          <span class="product-price">R$80,00</span>
+        </div>
+      </article>
 
-/* Buttons / actions */
-.product-actions{margin-top:auto;display:flex;gap:.5rem}
-.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem .7rem;border-radius:10px;border:none;cursor:pointer;font-weight:600}
-.btn-add{background:linear-gradient(90deg,var(--accent),#10b981);color:white}
-.btn-wish{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted)}
+      <!-- Produto 10 -->
+      <article class="product-card">
+        <h3 class="product-name">Los Mobilis</h3>
+        <div class="product-meta">
+          <span class="product-speed">132M/s</span>
+          <span class="product-price">R$75,00</span>
+        </div>
+      </article>
 
-/* Responsive tweaks */
-@media (max-width:420px){
-  .product-grid{grid-template-columns:repeat(1,1fr)}
-  .product-price{font-size:.95rem}
-}
+      <!-- Produto 11 -->
+      <article class="product-card">
+        <h3 class="product-name">Los Mobilis</h3>
+        <div class="product-meta">
+          <span class="product-speed">27,5M/s</span>
+          <span class="product-price">R$25,00</span>
+        </div>
+      </article>
 
-/* Utility */
-.kicker{font-size:.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:1.2px}
-.section-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem}
+      <!-- Produto 12 -->
+      <article class="product-card">
+        <h3 class="product-name">Los Nooo My Hotspotsitos</h3>
+        <div class="product-meta">
+          <span class="product-speed">41,2M/s</span>
+          <span class="product-price">R$25,00</span>
+        </div>
+      </article>
 
-/* Print friendly */
-@media print{
-  :root{background:white;color:black}
-  body{background:white}
-  .product-card{box-shadow:none;border:1px solid #ddd}
-  .product-price{color:black;background:transparent}
-}
+      <!-- Produto 13 -->
+      <article class="product-card">
+        <h3 class="product-name">Los Nooo My Hotspotsitos</h3>
+        <div class="product-meta">
+          <span class="product-speed">52,2M/s</span>
+          <span class="product-price">R$30,00</span>
+        </div>
+      </article>
+
+      <!-- Produto 14 -->
+      <article class="product-card">
+        <h3 class="product-name">La Grande Combinasion</h3>
+        <div class="product-meta">
+          <span class="product-speed">95M/s</span>
+          <span class="product-price">R$50,00</span>
+        </div>
+      </article>
+
+      <!-- Produto 15 -->
+      <article class="product-card">
+        <h3 class="product-name">Mieteteira Bicicleteira</h3>
+        <div class="product-meta">
+          <span class="product-speed">26M/s</span>
+          <span class="product-price">R$20,00</span>
+        </div>
+      </article>
+
+      <!-- Produto 16 -->
+      <article class="product-card">
+        <h3 class="product-name">Mieteteira Bicicleteira</h3>
+        <div class="product-meta">
+          <span class="product-speed">26M/s</span>
+          <span class="product-price">R$20,00</span>
+        </div>
+      </article>
+
+      <!-- Produto 17 -->
+      <article class="product-card">
+        <h3 class="product-name">Esok Sekolah</h3>
+        <div class="product-meta">
+          <span class="product-speed">45M/s</span>
+          <span class="product-price">R$30,00</span>
+        </div>
+      </article>
+
+      <!-- Produto 18 -->
+      <article class="product-card">
+        <h3 class="product-name">Tacorita Bicicleta</h3>
+        <div class="product-meta">
+          <span class="product-speed">57,7M/s</span>
+          <span class="product-price">R$50,00</span>
+        </div>
+      </article>
+
+      <!-- Produto 19 -->
+      <article class="product-card">
+        <h3 class="product-name">Los Nooo My Hotspotsitos</h3>
+        <div class="product-meta">
+          <span class="product-speed">49,5M/s</span>
+          <span class="product-price">R$35,00</span>
+        </div>
+      </article>
+
+      <!-- Produto 20 -->
+      <article class="product-card">
+        <h3 class="product-name">Los Mobilis</h3>
+        <div class="product-meta">
+          <span class="product-speed">66M/s</span>
+          <span class="product-price">R$40,00</span>
+        </div>
+      </article>
+
+      <!-- Produto 21 -->
+      <article class="product-card">
+        <h3 class="product-name">67</h3>
+        <div class="product-meta">
+          <span class="product-speed">35,6M/s</span>
+          <span class="product-price">R$20,00</span>
+        </div>
+      </article>
+
+      <!-- Produto 22 -->
+      <article class="product-card">
+        <h3 class="product-name">La Grande Extinta</h3>
+        <div class="product-meta">
+          <span class="product-speed">23,5M/s</span>
+          <span class="product-price">R$25,00</span>
+        </div>
+      </article>
+
+      <!-- Produto 23 -->
+      <article class="product-card">
+        <h3 class="product-name">Los Mobilis</h3>
+        <div class="product-meta">
+          <span class="product-speed">22M/s</span>
+          <span class="product-price">R$20,00</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</body>
+</html>
